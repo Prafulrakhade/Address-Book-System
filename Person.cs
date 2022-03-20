@@ -57,6 +57,37 @@ namespace AddressBookSystem
                 person = new List<Person>();
             }
         }
+        public void EditPersonDetails(string First_Name)
+        {
+            for (int i = 0; i < person.Count; i++)
+            {
+                if (person[i].First_Name == First_Name)
+                {
+                    Console.WriteLine("Enter The First Name: ");
+                    person[i].First_Name = Console.ReadLine();
+                    Console.WriteLine("Enter The Last Name: ");
+                    person[i].Last_Name = Console.ReadLine();
+                    Console.WriteLine("Enter The Address ");
+                    person[i].Address = Console.ReadLine();
+                    Console.WriteLine("Enter The City: ");
+                    person[i].City = Console.ReadLine();
+                    Console.WriteLine("Enter The State: ");
+                    person[i].State = Console.ReadLine();
+                    Console.WriteLine("Enter The Zip Code: ");
+                    person[i].Zip_Code = long.Parse(Console.ReadLine());
+                    Console.WriteLine("Enter The Phone Number: ");
+                    person[i].Phone_Number = long.Parse(Console.ReadLine());
+                    Console.WriteLine("Enter The Email ID: ");
+                    person[i].Email_ID = Console.ReadLine();
+                }
+                else
+                {
+                    Console.WriteLine("Only Same Name Required ");
+                }
+            }
+            string jsonData = JsonConvert.SerializeObject(person);
+            File.WriteAllText(@"C:\Users\HP\BridgeLabzs\Assignment\Day-10\AddressBookSystem\AddressBookSystem\AddressBookResult.json", jsonData);
+        }
     }
 
 }
