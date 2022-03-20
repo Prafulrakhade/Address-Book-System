@@ -62,6 +62,15 @@ namespace AddressBookSystem
             Console.WriteLine();
             manage.Display();
             manage.AddPerson(per);
+            Console.WriteLine("============================================================");
+
+
+            AddressBook edit = new();
+            edit.Display();
+            Console.WriteLine("Enter The Name For Edit Contact Details: ");
+            Console.WriteLine();
+            string Name = Console.ReadLine();
+            edit.EditPersonDetails(Name);
         }
     }
 }
