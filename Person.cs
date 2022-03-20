@@ -99,9 +99,9 @@ namespace AddressBookSystem
                     persn = del;
                 }
             }
-            person.Remove(persn);
-            string jsonData = JsonConvert.SerializeObject(person);
-            File.WriteAllText(@"D:\.Net\Assignment\day10\AddressBookManagement\AddressBookManagement\result.json", jsonData);
+            ////person.Remove(persn);
+            ////string jsonData = JsonConvert.SerializeObject(person);
+            ////File.WriteAllText(@"D:\.Net\Assignment\day10\AddressBookManagement\AddressBookManagement\result.json", jsonData);
         }
     }
 
