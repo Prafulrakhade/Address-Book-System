@@ -21,8 +21,8 @@ namespace AddressBookSystem
 
         public string Result()
         {
-            return "First Name: " + First_Name + "\n Last name: " + Last_Name + "\n Address: " + Address + "\n City: " + City + 
-            "\n State:" + State + "\n Zop COde: " + Zip_Code + "\n Phone Number: " + Phone_Number + "Email ID: " + Email_ID;
+            return "First Name: " + First_Name + "\n Last name: " + Last_Name + "\n Address: " + Address + "\n City: " + City +
+            "\n State:" + State + "\n Zop COde: " + Zip_Code + "\n Phone Number: " + Phone_Number + "/n Email ID: " + Email_ID;
         }
     }
 
@@ -45,5 +45,18 @@ namespace AddressBookSystem
             string jsonData = JsonConvert.SerializeObject(person);
             File.WriteAllText(@"C:\Users\HP\BridgeLabzs\Assignment\Day-10\AddressBookSystem\AddressBookSystem\AddressBookResult.json", jsonData);
         }
+        public AddressBook()
+        {
+            string json = File.ReadAllText(@"C:\Users\HP\BridgeLabzs\Assignment\Day-10\AddressBookSystem\AddressBookSystem\AddressBookResult.json");
+            if (json.Length > 0)
+            {
+                person = JsonConvert.DeserializeObject<List<Person>>(json);
+            }
+            else
+            {
+                person = new List<Person>();
+            }
+        }
     }
+
 }
