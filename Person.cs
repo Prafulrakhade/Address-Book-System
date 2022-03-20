@@ -88,6 +88,21 @@ namespace AddressBookSystem
             string jsonData = JsonConvert.SerializeObject(person);
             File.WriteAllText(@"C:\Users\HP\BridgeLabzs\Assignment\Day-10\AddressBookSystem\AddressBookSystem\AddressBookResult.json", jsonData);
         }
+
+        public void RemovePersonDetails(string First_Name)
+        {
+            Person persn = null;
+            foreach (Person del in person)
+            {
+                if (del.First_Name == First_Name)
+                {
+                    persn = del;
+                }
+            }
+            person.Remove(persn);
+            string jsonData = JsonConvert.SerializeObject(person);
+            File.WriteAllText(@"D:\.Net\Assignment\day10\AddressBookManagement\AddressBookManagement\result.json", jsonData);
+        }
     }
 
 }
