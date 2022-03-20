@@ -69,8 +69,19 @@ namespace AddressBookSystem
             edit.Display();
             Console.WriteLine("Enter The Name For Edit Contact Details: ");
             Console.WriteLine();
-            string Name = Console.ReadLine();
-            edit.EditPersonDetails(Name);
+            string Name1 = Console.ReadLine();
+            edit.EditPersonDetails(Name1);
+            edit.Display();
+            Console.WriteLine("============================================================");
+
+
+            AddressBook delete = new AddressBook();
+            delete.Display();
+            Console.WriteLine("Enter The Name For Delete the Contact Details: ");
+            string Name2 = Console.ReadLine();
+            delete.RemovePersonDetails(Name2);
+            delete.Display();
+            Console.WriteLine("============================================================");
         }
     }
 }
